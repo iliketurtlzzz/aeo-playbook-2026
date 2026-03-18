@@ -9,13 +9,13 @@
 <link href="https://fonts.googleapis.com/css2?family=Inter+Tight:wght@300;400;500;600;700;800&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
 <style>
   :root {
-    --mw-orange: #FF5E30;
-    --mw-blue: #0038FF;
-    --mw-purple: #7000F4;
-    --mw-neon: #EEFF25;
-    --mw-neon-green: #CEFF58;
-    --mw-red: #DE1414;
-    --mw-yellow: #FFD800;
+    --mw-orange: #7EC8E3;
+    --mw-blue: #3A6EA5;
+    --mw-purple: #5B4DC7;
+    --mw-neon: #A8E6CF;
+    --mw-neon-green: #88D4AB;
+    --mw-red: #E85D75;
+    --mw-yellow: #F4D35E;
     --transition: 0.35s cubic-bezier(0.4, 0, 0.2, 1);
     --radius: 6px;
     --max-w: 860px;
@@ -34,24 +34,24 @@
     --text-muted: #666;
     --logo-filter: invert(1);
     --chart-track: rgba(255,255,255,0.04);
-    --accent-glow: rgba(255, 94, 48, 0.06);
+    --accent-glow: rgba(126, 200, 227, 0.08);
     --code-bg: #1e1e1e;
   }
 
   [data-theme="light"] {
-    --bg: #F9F9F9;
+    --bg: #F9FBFD;
     --bg-elevated: #FFFFFF;
     --bg-card: #FFFFFF;
-    --bg-subtle: #F0F1F2;
-    --border: rgba(0,0,0,0.08);
-    --border-strong: rgba(0,0,0,0.14);
+    --bg-subtle: #EEF3F8;
+    --border: rgba(58, 110, 165, 0.1);
+    --border-strong: rgba(58, 110, 165, 0.18);
     --text: #0c0c0c;
-    --text-secondary: #666;
-    --text-muted: #999;
+    --text-secondary: #556677;
+    --text-muted: #8899AA;
     --logo-filter: none;
-    --chart-track: rgba(0,0,0,0.04);
-    --accent-glow: rgba(255, 94, 48, 0.04);
-    --code-bg: #f5f5f5;
+    --chart-track: rgba(58, 110, 165, 0.05);
+    --accent-glow: rgba(126, 200, 227, 0.06);
+    --code-bg: #f5f8fc;
   }
 
   * { margin: 0; padding: 0; box-sizing: border-box; }
@@ -85,19 +85,25 @@
     margin: 0 auto;
     padding: 20px 32px;
     display: flex;
+    flex-direction: column;
     align-items: center;
-    justify-content: space-between;
+    gap: 10px;
   }
   .logo-svg { height: 22px; width: auto; filter: var(--logo-filter); transition: filter var(--transition); }
 
-  .header-right { display: flex; align-items: center; gap: 20px; }
+  .header-bottom { display: flex; align-items: center; gap: 24px; }
   .header-tag {
     font-family: 'Space Grotesk', sans-serif;
-    font-size: 12px;
+    font-size: 11px;
     font-weight: 500;
     text-transform: uppercase;
-    letter-spacing: 2px;
+    letter-spacing: 2.5px;
     color: var(--text-muted);
+  }
+  .header-divider {
+    width: 1px;
+    height: 14px;
+    background: var(--border-strong);
   }
 
   .theme-toggle {
@@ -128,24 +134,32 @@
   .hero {
     padding: 100px 0 80px;
     border-bottom: 1px solid var(--border);
+    text-align: center;
   }
   .hero-preheader {
     font-family: 'Space Grotesk', sans-serif;
-    font-size: 14px;
-    font-weight: 500;
+    font-size: 13px;
+    font-weight: 600;
     text-transform: uppercase;
-    letter-spacing: 3px;
+    letter-spacing: 4px;
     color: var(--mw-orange);
     margin-bottom: 24px;
+    display: inline-block;
+    padding: 8px 20px;
+    border: 1px solid var(--mw-orange);
+    border-radius: 50px;
+    opacity: 0.85;
   }
   .hero h1 {
     font-family: 'Inter Tight', sans-serif;
-    font-size: 52px;
+    font-size: 56px;
     font-weight: 800;
     line-height: 1.08;
     letter-spacing: -2.5px;
     margin-bottom: 28px;
-    max-width: 700px;
+    max-width: 750px;
+    margin-left: auto;
+    margin-right: auto;
   }
   .hero h1 em {
     font-style: normal;
@@ -157,11 +171,12 @@
     line-height: 1.7;
     color: var(--text-secondary);
     max-width: 600px;
-    margin-bottom: 48px;
+    margin: 0 auto 48px;
   }
   .hero-stat-row {
     display: flex;
-    gap: 48px;
+    justify-content: center;
+    gap: 56px;
     border-top: 1px solid var(--border);
     padding-top: 32px;
   }
@@ -295,7 +310,7 @@
     margin-bottom: 16px;
   }
   .compare-label.win { color: var(--mw-neon); }
-  [data-theme="light"] .compare-label.win { color: #2a8c00; }
+  [data-theme="light"] .compare-label.win { color: #2a8c6a; }
   .compare-label.lose { color: var(--mw-red); }
   .compare-example {
     font-size: 16px;
@@ -401,8 +416,8 @@
     color: var(--mw-neon);
     margin-bottom: 10px;
   }
-  [data-theme="light"] .eli5-label { color: #6a8c00; }
-  [data-theme="light"] .eli5 { border-left-color: #b8d400; }
+  [data-theme="light"] .eli5-label { color: #2a8c6a; }
+  [data-theme="light"] .eli5 { border-left-color: #88D4AB; }
   .eli5 p {
     font-size: 16px;
     font-weight: 400;
@@ -461,7 +476,7 @@
     width: 100%;
     height: 8px;
     border-radius: 4px;
-    background: linear-gradient(90deg, var(--mw-blue) 0%, var(--mw-neon-green) 35%, var(--mw-orange) 65%, var(--mw-red) 100%);
+    background: linear-gradient(90deg, var(--mw-blue) 0%, var(--mw-neon-green) 35%, var(--mw-orange) 60%, var(--mw-red) 100%);
     margin: 20px 0 12px;
     position: relative;
   }
@@ -543,8 +558,9 @@
 <header>
   <div class="header-inner">
     <img class="logo-svg" src="https://www.marketwake.com/wp-content/uploads/2024/06/Marketwake-logo.svg" alt="Marketwake" />
-    <div class="header-right">
+    <div class="header-bottom">
       <span class="header-tag">AEO Playbook &middot; 2026</span>
+      <div class="header-divider"></div>
       <button class="theme-toggle" onclick="toggleTheme()">
         <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="5"/><path d="M12 1v2M12 21v2M4.22 4.22l1.42 1.42M18.36 18.36l1.42 1.42M1 12h2M21 12h2M4.22 19.78l1.42-1.42M18.36 5.64l1.42-1.42"/></svg>
         <span class="label-light">Light</span>
@@ -675,7 +691,7 @@
       <div class="chart-label">Citation Distribution by Page Position</div>
       <svg class="chart-svg" viewBox="0 0 760 300" xmlns="http://www.w3.org/2000/svg">
         <defs>
-          <linearGradient id="g1" x1="0" y1="0" x2="0" y2="1"><stop offset="0%" stop-color="#FF5E30"/><stop offset="100%" stop-color="#FF5E30" stop-opacity="0.6"/></linearGradient>
+          <linearGradient id="g1" x1="0" y1="0" x2="0" y2="1"><stop offset="0%" stop-color="#7EC8E3"/><stop offset="100%" stop-color="#7EC8E3" stop-opacity="0.6"/></linearGradient>
           <linearGradient id="g2" x1="0" y1="0" x2="0" y2="1"><stop offset="0%" stop-color="#0038FF"/><stop offset="100%" stop-color="#0038FF" stop-opacity="0.6"/></linearGradient>
           <linearGradient id="g3" x1="0" y1="0" x2="0" y2="1"><stop offset="0%" stop-color="#7000F4"/><stop offset="100%" stop-color="#7000F4" stop-opacity="0.6"/></linearGradient>
         </defs>
@@ -919,7 +935,7 @@
           <linearGradient id="spectrum" x1="0" y1="0" x2="1" y2="0">
             <stop offset="0%" stop-color="#0038FF"/>
             <stop offset="30%" stop-color="#CEFF58"/>
-            <stop offset="60%" stop-color="#FF5E30"/>
+            <stop offset="60%" stop-color="#7EC8E3"/>
             <stop offset="100%" stop-color="#DE1414"/>
           </linearGradient>
         </defs>
